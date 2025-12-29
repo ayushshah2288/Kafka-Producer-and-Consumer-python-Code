@@ -61,7 +61,9 @@ for record in records:
             callback=delivery_status
         )
 
-        # 3. Handle Events (Trigger the callback)
+        # 3. Handle Events (Trigger the callback), 
+        #The 0 in poll(0) means "Check right now and don't wait." This ensures your loop stays fast.
+        
         producer.poll(0)
 
     except Exception as e:
