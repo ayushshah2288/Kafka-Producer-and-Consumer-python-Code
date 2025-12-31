@@ -2,6 +2,10 @@
 
 The Core Problem: Asynchronous Nature
 
+
+https://github.com/user-attachments/assets/10358813-b999-47a7-873c-42454f07b3e5
+
+
 To be extremely fast, Kafka Producers are **asynchronous**. When you run `producer.produce()`, the code **does not wait** for the message to reach the server. It just drops the message in a local "outbox" (buffer) and moves to the next line of code immediately.
 
 Because of this, we need special mechanisms to track what actually happened to those messages. That is where Callback, Poll, and Flush come in.
